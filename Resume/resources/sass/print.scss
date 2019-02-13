@@ -1,0 +1,61 @@
+/* Welcome to Compass. Use this file to define print styles.
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" /> */
+$page-padding-side: 2.1cm;
+$content-min-height: 29cm;
+
+$side-bar-wrap-margin: 0;
+
+
+
+
+
+
+
+
+
+@import "_styles";
+
+@page  
+{ 
+    size: 21.0cm x 29.7cm;   /* auto is the initial value */ 
+
+    /* this affects the margin in the printer settings */ 
+    margin: 0mm;
+	padding: 0px;
+} 
+* {
+	-webkit-print-color-adjust: exact;
+	print-color-adjust: exact;
+}
+html, body {
+        height: 100%;
+    }
+
+.side-bar-wrap {
+	margin-top: 10vh !important;
+}
+.no-print {
+	display: none;
+}
+
+
+.social li {
+	display: block;
+}
+.social li a:after {
+	content: attr(print-url);
+}
+
+.content .details-container {
+	page-break-inside: avoid;
+	padding-top: 1.2em;
+}
+
+.printdiv {
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
+	top: 0;
+	left: 0;
+}

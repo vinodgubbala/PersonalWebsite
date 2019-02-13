@@ -1,0 +1,24 @@
+@import '_fonts';
+@import '_palette';
+$base-color1: $primary-color !default;
+$base-color2: $primary-color-text !default;
+$other-color: $accent-color !default;
+$side-bar-width: 250px !default;
+$font1: 'Mutter Krause' !default;
+$font2: 'Caviar Dreams' !default;
+$font3: 'Silent Reaction' !default;
+$profile-padding-top: 8vh !default; 
+$page-padding-side: 2em !default;
+$page-padding-vertical: 0em !default;
+$contentPadding: 1.5em $page-padding-side 2em 0em !default;
+$contentLeftPadding: 20px !default;
+$title-padder: 0.4em !default;
+$content-title-size: 1.6em !default;
+$content-min-height: 100vh !default;
+$triangle-border: ($title-padder + $content-title-size - 0.2)/2 !default;
+$triangle-size: 8 !default;
+
+$profile-border: 10px double $base-color2 !default;
+$side-bar-wrap-margin: 2em 0 !default;
+
+$social-font-color: $primary-color-dark !default;

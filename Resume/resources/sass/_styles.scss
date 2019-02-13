@@ -1,0 +1,258 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "_var";
+@import "_functions";
+
+body {
+	background-color: $base-color1;
+	color: $base-color2;
+	font-family: $font1;
+}
+.side-bar {
+	width: 35px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: $side-bar-width;
+	border: 0px;
+	.profile-pic {
+		width: 200px;
+		height: 200px;
+		background-size: contain;
+		border-radius: 500px;
+		margin: $profile-padding-top auto 0px;
+		border: $profile-border;
+	}
+	.side-bar-wrap {
+		margin: $side-bar-wrap-margin;
+	}
+	.download-resume {
+		margin-top: 2em;
+		text-align: center;
+		a {
+		 color: $base-color2;
+		}
+	}
+	.side-container {
+		padding: 1em 0 0 2em;
+		&::before {
+			font-family: $font3;
+			font-size: 1.9em;
+			display: block;
+			line-height: 1.5em;
+		}
+		ul {
+			li {
+				&::before {
+					@include fa-styles-content();
+					margin-right: 0.4em;
+				}
+			}
+		}
+		
+		
+		
+		&.skills {
+			&::before {
+				content: 'Skills';
+			}
+			ul {
+				li {
+					&::before {
+						content: "\f00c";
+					}
+				}
+			}
+		}
+		&.contact {	
+			&::before {
+				content: 'Contact';
+			}
+			ul {
+				li {
+					&.li-mail::before {
+						content: "\f0e0 ";
+					}
+					&.li-phone::before {
+						content: "\f095 ";
+					}
+					&.li-address::before {
+						content: "\f041 ";
+					}
+					a {
+						text-decoration: none;
+						color: inherit;
+					}
+				}
+			}
+		}
+		&.date {
+			&::before {
+				content: 'Date';
+			}
+		}
+		&.social {
+			padding: 1em;
+			margin: 1em 0.4em 0;
+			background-color: rgba(249, 249, 249, 0.69);
+			border-radius: 15px;
+			ul {
+				li {
+					display: inline-block;
+					a {
+						text-decoration: none;
+						font-size: 1em;
+						margin: 0px 0.1em;
+						color: $other-color;
+						text-shadow: 0px 1px 1px #ffffff;
+						&::before {
+							font-size: inherit;
+							padding: 5px;
+						}
+						&.social-twitter {
+							//background-color: white;
+							//border-radius: 6px;
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	
+}
+.content {
+	background-color: $base-color2;
+	color: $base-color1;
+	margin-left: $side-bar-width;
+	//display: table-cell;
+	//width: 100%;
+	min-height: $content-min-height;
+	padding: $contentPadding;
+	
+	border-left: 3px dotted $base-color1;
+	h1 {
+		//text-align: center;
+		font-size: 4em;
+		font-family: $font3;
+		//font-weight: bold;
+		padding-left: $contentLeftPadding;
+	}
+	.details-container {
+		margin-top: 0.8em;
+		h2 {
+			
+			position: relative;
+			display: inline-flex;
+			font-family: $font3;
+			//padding: 1em 120px 1em $contentLeftPadding;
+			font-size: $content-title-size;
+			line-height: 1em;
+			span {
+				color: $base-color2;
+				background-color: $base-color1;
+				display: inline-block;
+				padding: $title-padder 10vw $title-padder $contentLeftPadding;
+			}
+			&::after {
+				display: inline-block;
+				content: ' ';
+				//position: absolute;
+				right: 0;
+				top: 0;
+				width: 0; 
+				height: 0;
+				border-top: $triangle-border solid transparent;
+				border-bottom: $triangle-border solid transparent;
+				border-left: $triangle-border*$triangle-size solid $base-color1;
+				//background-color: $base-color2;
+			}
+		}
+		
+		ul {
+			padding-left: $contentLeftPadding;
+			li {
+				padding: 0.1em 0px;
+				&::before {
+					@include fa-styles-content();
+					margin-right: 0.4em;
+				}
+			}
+		}
+		
+		h3 {
+			font-size: 1.2em;
+			font-weight: bold;
+			font-family: $font1;
+			.caption {
+				font-size: 0.8em;
+				padding-left: 1em;
+			}
+		}
+		.description {
+			font-family: $font2;
+			font-size: 0.9em;
+			display: table;
+			.row {
+				display: table-row;
+				.title, .detail {
+					display: table-cell;
+				}
+				.title {
+				}
+			}
+		}
+
+		&.profile {
+			ul {
+				li::before {
+					content: '\f0da';
+				}
+			}
+		}
+		&.experience {
+			h7 {
+				font-size: 0.8em;
+			}
+			.description {
+				.row {
+					.title {
+						white-space: nowrap;
+						width: 150px;
+					}
+				}
+			}
+		}
+		&.education {
+			
+			.description {
+				font-weight: bold;
+				font-family: $font1;
+				.title {
+					width: 120px;
+				}
+			}
+		}
+	}
+}
+
+@include fa-icon('social-facebook', '\f230', #3b5998);
+
+@include fa-icon('social-googleplus', '\f0d5', #dd4b39);
+
+
+@include fa-icon('social-twitter', '\f099', #55acee);
+
+
+@include fa-icon('social-linkedin', '\f0e1', #007bb5);
+@include fa-icon('social-instagram', '\f16d', #e95950);
+
+@include fa-icon('social-youtube', '\f16a', #bb0000);
+
+@include fa-icon('social-stackoverflow', '\f16c', #f48024);
+
+

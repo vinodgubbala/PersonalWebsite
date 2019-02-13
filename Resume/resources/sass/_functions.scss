@@ -1,0 +1,32 @@
+
+@import "_var";
+/* font awesome mixin */
+@mixin fa-icon-content($iconContent) {
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    &::before {
+        content: $iconContent;
+		@include fa-styles-content();
+    }
+}
+@mixin fa-icon($cls, $iconContent, $color:"") {
+    .#{$cls} {        
+        display: inline-block;
+        @include fa-icon-content($iconContent);
+		@if $color != "" {
+			color: $color;
+		}
+    }
+}
+@mixin fa-styles-content() {
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+	line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+	font-size: 14px;
+}
